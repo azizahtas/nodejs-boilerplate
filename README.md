@@ -20,8 +20,8 @@ To setting up the software needed just follow the next tutorial:
 Just run in the console this commands:
 
 	cd ~/Apps
-	git clone https://github.com/eduardogch/nodejs-boilerplate
-	cd boilerplate
+	git clone https://github.com/eduardogch/nodejs-boilerplate.git
+	cd nodejs-boilerplate
 	npm install
 	sudo npm install -g nodemon mocha gulp bower
 	bower install
@@ -35,11 +35,17 @@ Go to Webstorm and set this values to Run and Debug the project:
 	
 	/usr/local/bin/nodemon
 	DEBUG=test:*
+	
+![alt tag](http://i.imgur.com/KUBvW44.png)
+	
+![alt tag](http://i.imgur.com/ciB0es1.png)
 
 
 To testing the app use Mocha and Webstorm
 
 	/home/eduardo/Apps/boilerplate/test
+	
+![alt tag](http://i.imgur.com/JEcewFl.png)
 
 -----
 
