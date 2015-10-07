@@ -1,9 +1,12 @@
 {
-  "name": "hackathon-starter",
-  "version": "3.1.0",
+  "name": "nodejs-boilerplate",
+  "version": "1.0.0",
+  "description": "Perfect startup project for Node",
+  "author": "Eduardo Gonzalez <eduardo.gch@gmail.com>",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sahat/hackathon-starter.git"
+    "url": "https://github.com/eduardogch/nodejs-boilerplate"
   },
   "scripts": {
     "start": "node app.js",
@@ -70,6 +73,5 @@
     "mocha": "^2.3.3",
     "multiline": "^1.0.2",
     "supertest": "^1.1.0"
-  },
-  "license": "MIT"
+  }
 }
