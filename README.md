@@ -20,7 +20,7 @@ To setting up the software needed just follow the next tutorial:
 Just run in the console this commands:
 
 	cd ~/Apps
-	git clone https://eduardogch@bitbucket.org/eduardogch/nodejs-boilerplate.git
+	git clone https://github.com/eduardogch/nodejs-boilerplate
 	cd boilerplate
 	npm install
 	sudo npm install -g nodemon mocha gulp bower
