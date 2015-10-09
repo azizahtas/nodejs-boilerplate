@@ -9,6 +9,10 @@
 * JavaScript, NodeJS, Angular, Gulp, Bower, MongoDB
 * WebStorm, Visual Studio Code, Gedit
 
+## Project base on:
+
+	https://github.com/sahat/hackathon-starter
+	
 -----
 
 ## Set up NodeJS and MongoDB

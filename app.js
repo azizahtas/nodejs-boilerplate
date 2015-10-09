@@ -61,7 +61,7 @@ app.use(sass({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   debug: true,
-  outputStyle: 'expanded'
+  outputStyle: 'compressed'
 }));
 app.use(logger('dev'));
 app.use(favicon(path.join(__dirname, 'public', 'img/favicon.png')));
@@ -126,6 +126,8 @@ app.get('/api/aviary', apiController.getAviary);
 app.get('/api/steam', apiController.getSteam);
 app.get('/api/stripe', apiController.getStripe);
 app.post('/api/stripe', apiController.postStripe);
+app.get('/api/conekta', apiController.getConekta);
+app.post('/api/conekta', apiController.postConekta);
 app.get('/api/scraping', apiController.getScraping);
 app.get('/api/twilio', apiController.getTwilio);
 app.post('/api/twilio', apiController.postTwilio);

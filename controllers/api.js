@@ -10,6 +10,7 @@ var foursquare;
 var Github;
 var Twit;
 var stripe;
+var conekta;
 var twilio;
 var Linkedin;
 var BitGo;
@@ -410,6 +411,58 @@ exports.postStripe = function(req, res, next) {
     req.flash('success', { msg: 'Your card has been charged successfully.' });
     res.redirect('/api/stripe');
   });
+};
+
+/**
+ * GET /api/conekta
+ * Stripe API example.
+ */
+exports.getConekta = function(req, res) {
+  conekta = require('conekta')(secrets.stripe.secretKey);
+
+  res.render('api/conekta', {
+    title: 'Conekta API',
+    publishableKey: secrets.stripe.publishableKey
+  });
+};
+
+/**
+ * POST /api/conekta
+ * Make a payment.
+ */
+exports.postConekta = function(req, res, next) {
+  var stripeToken = req.body.stripeToken;
+  var stripeEmail = req.body.stripeEmail;
+  stripe.charges.create({
+    amount: 395,
+    currency: 'usd',
+    source: stripeToken,
+    description: stripeEmail
+  }, function(err, charge) {
+    if (err && err.type === 'StripeCardError') {
+      req.flash('errors', { msg: 'Your card has been declined.' });
+      res.redirect('/api/stripe');
+    }
+    req.flash('success', { msg: 'Your card has been charged successfully.' });
+    res.redirect('/api/conekta');
+  });
+
+
+  var keys = require('./keys.json'),
+      conekta = require('conekta');
+  conekta.api_key = keys.private_key;
+  conekta.Charge.create(req.body, function(err, charge) {
+    if (err) {
+      return res.render('charge', {
+        charge: err
+      });
+    }
+    res.render('charge', {
+      charge: charge.toObject()
+    });
+  });
+
+
 };
 
 /**

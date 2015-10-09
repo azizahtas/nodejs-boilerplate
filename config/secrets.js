@@ -146,6 +146,10 @@ module.exports = {
 
   bitcore: {
     bitcoinNetwork: process.env.BITCORE_BITCOIN_NETWORK || 'testnet'
+  },
+
+  conekta: {
+    secretKey: process.env.CONEKTA || 'key_eYvWV7gSDkNYXsmr'
   }
 
 };
